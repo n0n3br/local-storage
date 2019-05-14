@@ -18,7 +18,7 @@ export default class LocalStorage {
   private prefix: string;
   private ttl: number;
 
-  constructor(config?: configuration = {}) {
+  constructor(config: configuration = {}) {
     this.prefix = config.prefix || "app";
     this.ttl = config.ttl || 1000 * 60 * 60 * 24;
   }
@@ -46,7 +46,6 @@ export default class LocalStorage {
       );
       return true;
     } catch (error) {
-      console.log(error);
       return false;
     }
   }
@@ -56,7 +55,6 @@ export default class LocalStorage {
     try {
       return JSON.parse(localStorage.getItem(`${this.prefix}_${key}`)).content;
     } catch (error) {
-      console.log(error);
       return null;
     }
   }
@@ -78,7 +76,6 @@ export default class LocalStorage {
       };
       localStorage.setItem(`${this.prefix}_${key}`, JSON.stringify(lsObject));
     } catch (error) {
-      console.log(error);
       if (this.quotaClean()) {
         return this.set(key, value, ttl);
       }

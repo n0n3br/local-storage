@@ -20,20 +20,6 @@ describe("LocalStorage", () => {
     it("should have clear method", () => {
       expect(storage.clear).toBeInstanceOf(Function);
     });
-    it("should have default prefix", () => {
-      expect(storage.prefix).toBe("app");
-    });
-    it("should have default ttl of 24 hours", () => {
-      expect(storage.ttl).toBe(1000 * 60 * 60 * 24);
-    });
-    it("should accept prefix configuration", () => {
-      const newStorage = new LocalStorage({ prefix: "test" });
-      expect(newStorage.prefix).toBe("test");
-    });
-    it("should accept ttl configuration", () => {
-      const newStorage = new LocalStorage({ ttl: 10 });
-      expect(newStorage.ttl).toBe(10);
-    });
   });
 
   describe("get and set", () => {
