@@ -4,9 +4,10 @@
   "description": "Simple Parcel Sandbox",
   "main": "index.html",
   "scripts": {
-    "build": "npm run test && rimraf dist && tsc && npm run minify",
+    "build": "npm run test && npm run coverage && rimraf dist && tsc && npm run minify",
     "test": "jest",
-    "minify": "uglifyjs ./dist/index.js --compress  -o ./dist/index.min.js --source-map"
+    "minify": "uglifyjs ./dist/index.js --compress  -o ./dist/index.min.js --source-map",
+    "coverage": "jest --coverage"
   },
   "dependencies": {},
   "devDependencies": {
@@ -15,6 +16,7 @@
     "@typescript-eslint/parser": "^1.8.0",
     "eslint": "^5.16.0",
     "jest": "^24.8.0",
+    "nodecat": "^2.0.0",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5",
