@@ -7,13 +7,14 @@
     "build": "npm run test && npm run coverage && rimraf dist && tsc && npm run minify",
     "test": "jest",
     "minify": "uglifyjs ./dist/index.js --compress  -o ./dist/index.min.js --source-map",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage && codecov"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.12",
     "@typescript-eslint/eslint-plugin": "^1.8.0",
     "@typescript-eslint/parser": "^1.8.0",
+    "codecov": "^3.4.0",
     "eslint": "^5.16.0",
     "jest": "^24.8.0",
     "nodecat": "^2.0.0",
