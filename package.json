@@ -1,14 +1,33 @@
 {
-  "name": "local-storage",
+  "name": "@n0n3br/local-storage",
   "version": "1.0.0",
-  "description": "Simple Parcel Sandbox",
-  "main": "index.html",
+  "description": "LocalStorage module with time to live and disk quota exception recovery",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "npm run test && npm run coverage && rimraf dist && tsc && npm run minify",
     "test": "jest",
     "minify": "uglifyjs ./dist/index.js --compress  -o ./dist/index.min.js --source-map",
     "coverage": "jest --coverage && codecov"
   },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n0n3br/local-storage"
+  },
+  "keywords": [
+    "js",
+    "object",
+    "library",
+    "publish",
+    "subscriber",
+    "state",
+    "store",
+    "reactive"
+  ],
+  "author": "Rogério Luiz Aques de Amorim <rogeriol@gmail.com>",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^24.0.12",
